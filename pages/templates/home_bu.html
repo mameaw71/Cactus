@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #6B8E23;
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  height: 100px;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 30%;
+  height: 550px; /* only for demonstration, should be removed */
+  background: #EEE8AA;
+  padding: 20px;
+  font-size: 30px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  color: OliveDrab;
+  background-color: #f1f1f1;
+  height: 550px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color: #6B8E23;
+  padding: 10px;
+  text-align: left;
+  color: white;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+</head>
+<body>
+
+
+<header>
+  <h2>Cactus City</h2>
+</header>
+
+<section>
+  <nav>
+    <ul>
+      <li><a href="{% url 'home' %}" target="_self" style="font-family:courier; color:OliveDrab;">Home</a></li>
+      <li><a href="{% url 'page1' %}"target="_blank" style="font-family:courier; color:OliveDrab;">Page1</a></li>
+      <li><a href="{% url 'page2' %}"target="_blank" style="font-family:courier; color:OliveDrab;">Page2</a></li>
+    </ul>
+  </nav>
+  
+  <article>
+    <h1>Welcome to Cactus City</h1>
+    <p>ยินดีต้อนรับสำหรับผู้ที่มีความรัก หลงใหล หรือสนใจในต้นกระบองเพชร ซึ่งเป็นพืชที่มีเอกลักษณ์เฉพาะตัว และมีหลากหลายสายพันธุ์</p>
+    <p>Cactus City จึงขอรวบรวมเกร็ดความรู้เกี่ยวกับกระบองเพชร และเป็นแหล่งช้อปออนไลน์ สำหรับผู้ที่กำลังหาต้นกระบองเพชรสวยๆ น่ารัก และแข็งแรง ไปครอบครองกัน</p>
+    <img src="https://cdn.shortpixel.ai/spai/w_1386+q_lossy+ret_img+to_webp/https://www.sammakorn.co.th/wp-content/uploads/2020/02/Cactus_693x432pix.jpg" alt="CactusCity1" width="600" height="350">
+  </article>
+</section>
+
+<footer>
+  <p>Line ID: cactus_city</p>
+</footer>
+
+</body>
+</html>
